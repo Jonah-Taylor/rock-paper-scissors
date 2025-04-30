@@ -1,0 +1,56 @@
+body {
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.scores {
+  display: flex;
+  margin: 100px;
+  justify-content: space-around;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.humanScore {
+  color: lime;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.computerScore {
+  color: skyblue;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 100px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  border-radius: 50%;
+  width: 20%;
+  aspect-ratio: 1 / 1;
+  font-size: 40px;
+}
+
+button:hover {
+  background-color: red;
+  border: white;
+}
+
+button:active {
+  background-color: darkred;
+}

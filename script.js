@@ -3,6 +3,11 @@
 let humanScore = 0;
 let computerScore = 0;
 
+let humanScoreText = document.querySelector(".humanScore .score");
+let computerScoreText = document.querySelector(".computerScore .score");
+
+
+
 console.log("hello world");
 
 function playRound(humanChoice, computerChoice) {
@@ -21,9 +26,11 @@ function playRound(humanChoice, computerChoice) {
         console.log(`Tie ${humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)} ties with ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}`);
     } else if (wonGame) {
         humanScore += 1;
+        humanScoreText.textContent = humanScore;
         console.log(`You Won! ${humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)} beats ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}`);
     } else {
         computerScore += 1;
+        computerScoreText.textContent = computerScore;
         console.log(`You Lost! ${humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)} loses to ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)}`);
     }
 }
@@ -51,11 +58,9 @@ function getHumanChoice() {
 
 function playGame() {
 
-    for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
 
     if (humanScore > computerScore) {
         console.log("The human wins!");
@@ -63,9 +68,13 @@ function playGame() {
         console.log("The computer wins!");
     } else {
         console.log("It's a tie!");
-    }
+        }
 }
 
-playGame();
+let buttons = document.querySelectorAll("buttons");
 
-
+buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        playRound(event.target.value, getComputerChoice());
+    });
+});
