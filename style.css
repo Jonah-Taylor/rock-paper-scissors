@@ -1,13 +1,13 @@
 body {
   background-color: black;
   color: white;
-  font-size: 24px;
+  font-size: 36px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .scores {
   display: flex;
-  margin: 100px;
+  margin: 50px;
   justify-content: space-around;
   font-size: 50px;
   font-weight: bold;
@@ -21,7 +21,7 @@ body {
 }
 
 .computerScore {
-  color: skyblue;
+  color: lime;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -31,7 +31,7 @@ body {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
-  margin: 100px;
+  margin: 50px;
 }
 
 .options {
@@ -47,10 +47,18 @@ button {
 }
 
 button:hover {
-  background-color: red;
+  background-color: lightgreen;
   border: white;
 }
 
 button:active {
-  background-color: darkred;
+  background-color: green;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin: 70px;
 }
